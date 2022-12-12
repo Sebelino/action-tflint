@@ -73,7 +73,7 @@ done
 case "${INPUT_TFLINT_INIT:-false}" in
     true)
         echo "::group:: Initialize tflint from local configuration"
-        TFLINT_PLUGIN_DIR="${TFLINT_PLUGIN_DIR}" "${TFLINT_PATH}/tflint" --init ${INPUT_FLAGS}
+        TFLINT_PLUGIN_DIR="${TFLINT_PLUGIN_DIR}" GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}" "${TFLINT_PATH}/tflint" --init ${INPUT_FLAGS}
         echo "::endgroup::"
         ;;
     false)
